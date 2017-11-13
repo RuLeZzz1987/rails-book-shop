@@ -10,6 +10,9 @@
 <div id="banner">
   <%= image_tag("logo.png") %>
   <%= @page_title || "Pragmatic Bookshelf" %>
+  <% if !session[:counter].nil? && session[:counter] >= 5 %>
+      <h5 class="counter"><%= pluralize(session[:counter], 'time', 'times') %></h5>
+  <% end %>
 </div>
 <div id="columns">
   <div id="side">
